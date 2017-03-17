@@ -42,7 +42,7 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
