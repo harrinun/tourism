@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Tour\Repositories\HotelRepository;
+use App\Tour\Repositories\AttractionRepository;
 use Illuminate\Http\Request;
 
-class HotelController extends Controller
+class AttractionController extends Controller
 {
-    protected $hotels;
+    protected $attraction;
 
-    public function __construct(HotelRepository $hotelRepository)
+    public function __construct(AttractionRepository $attractionRepository)
+
     {
-        $this->hotels = $hotelRepository;
+        $this->attraction = $attractionRepository;
+
     }
     /**
      * Display a listing of the resource.
@@ -20,8 +22,10 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels=$this->hotels->paginate(10);
-        return view('hotels.index',compact('hotels'));
+
+        $attraction=$this->attraction->paginate(10);
+        return view('attraction.index',compact('attraction'));
+        //
     }
 
     /**
@@ -42,7 +46,7 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
