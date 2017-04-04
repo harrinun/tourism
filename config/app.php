@@ -168,6 +168,15 @@ return [
          */
 
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Conner\Tagging\Providers\TaggingServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
+        AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -225,6 +234,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'SocialAuth' => AdamWathan\EloquentOAuth\Facades\OAuth::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
