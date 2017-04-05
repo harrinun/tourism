@@ -60,13 +60,7 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="hotel.html">Hotel</a>
-                        <ul class="sub-menu">
-                            <li><a href="hotel.html">Hotel</a></li>
-                            <li><a href="hotel-detail.html">Hotel Detail</a></li>
-                            <li><a href="hotel-dark.html">Hotel (Dark)</a></li>
-                            <li><a href="hotel-detail-dark.html">Hotel Detail (Dark)</a></li>
-                        </ul>
+                        <a href="{{route('hotels.index')}}">Hotels</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="flight.html">Flight</a>
@@ -87,13 +81,7 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="attraction.html">Attraction</a>
-                        <ul class="sub-menu">
-                            <li><a href="attraction.html">Attraction</a></li>
-                            <li><a href="attraction-detail.html">Attraction Detail</a></li>
-                            <li><a href="attraction-dark.html">Attraction (Dark)</a></li>
-                            <li><a href="attraction-detail-dark.html">Attraction Detail (Dark)</a></li>
-                        </ul>
+                        <a href="{{route('attractions.index')}}">Attraction</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Pages</a>

@@ -23,8 +23,8 @@ class AttractionController extends Controller
     public function index()
     {
 
-        $attraction=$this->attraction->paginate(10);
-        return view('attraction.index',compact('attraction'));
+        //$attraction=$this->attraction->paginate(10);
+        return view('site.attractions.index');
         //
     }
 
