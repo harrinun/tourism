@@ -17,7 +17,7 @@ class Hotel extends Model implements Transformable
         'type',
         'region',
     ];
-
+    //todo add rooms relationship
     /**
      * Return the sluggable configuration array for this model.
      *

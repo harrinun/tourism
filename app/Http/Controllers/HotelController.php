@@ -20,8 +20,8 @@ class HotelController extends Controller
      */
     public function index()
     {
-        //$hotels=$this->hotels->paginate(10);
-        return view('site.hotels.index');
+        $hotels=$this->hotels->paginate(10);
+        return view('site.hotels.index',compact('hotels'));
     }
 
     /**
