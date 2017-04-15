@@ -32,4 +32,4 @@ Route::resource('hotels','HotelController');
 | Attraction Route
 |--------------------------------------------------------------------------
 */
-Route::resource('attractions','AttractionController');
+Route::resource('attractions','AttractionsController');
