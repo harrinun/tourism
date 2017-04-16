@@ -3,23 +3,15 @@
         <div class="container">
             <!-- LOGO -->
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt=""></a>
+                <a href="{{url('/')}}"><img src="images/logo.png" alt=""></a>
             </div>
             <!-- END / LOGO -->
 
             <!-- NAVIGATION -->
             <nav class="navigation awe-navigation" data-responsive="1200">
                 <ul class="menu-list">
-                    <li class="menu-item-has-children current-menu-parent">
-                        <a href="index.html">Home</a>
-                        <ul class="sub-menu">
-                            <li class="current-menu-item"><a href="index.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                            <li><a href="index3.html">Menu hamburger</a></li>
-                            <li><a href="index-dark.html">Home 1 (Dark)</a></li>
-                            <li><a href="index2-dark.html">Home 2 (Dark)</a></li>
-                            <li><a href="index3-dark.html">Menu hamburger (Dark)</a></li>
-                        </ul>
+                    <li class="current-menu-parent">
+                        <a href="{{url('/')}}">Home</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="destinations-list.html">Destinations</a>

@@ -70,20 +70,8 @@
                             </div>
                                 @endforeach
                             @endif
-                            <!-- END / ITEM -->
+                            {{$hotels->links()}}
                         </div>
-
-
-                        <!-- PAGINATION -->
-                        <div class="page__pagination">
-                            <span class="pagination-prev"><i class="fa fa-caret-left"></i></span>
-                            <span class="current">1</span>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#" class="pagination-next"><i class="fa fa-caret-right"></i></a>
-                        </div>
-                        <!-- END / PAGINATION -->
                     </div>
                 </div>
                 @include('site.partials._widgets',['page'=>'Hotel'])

@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index');
 | Hotel Routes
 |--------------------------------------------------------------------------
 */
-Route::resource('hotels','HotelController');
+Route::resource('hotels','HotelsController');
 
 
 /*

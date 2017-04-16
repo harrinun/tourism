@@ -26,6 +26,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Tour\Repositories\HotelRepository::class, \App\Tour\Eloquent\HotelRepositoryEloquent::class);
         $this->app->bind(\App\Tour\Repositories\AttractionRepository::class, \App\Tour\Eloquent\AttractionRepositoryEloquent::class);
         $this->app->bind(\App\Tour\Repositories\RestaurantRepository::class, \App\Tour\Eloquent\RestaurantRepositoryEloquent::class);
+        $this->app->bind(\App\Tour\Repositories\RoomRepository::class, \App\Tour\Eloquent\RoomRepositoryEloquent::class);
+        $this->app->bind(\App\Tour\Repositories\RoomTypeRepository::class, \App\Tour\Eloquent\RoomTypeRepositoryEloquent::class);
         //:end-bindings:
     }
 }
