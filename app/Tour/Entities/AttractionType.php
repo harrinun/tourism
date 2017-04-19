@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
-class Room extends Model implements Transformable
+class AttractionType extends Model implements Transformable
 {
     use TransformableTrait;
 
     protected $fillable = [
-        'room_type_id',
-        'no_of_rooms',
+        'name',
+        'description'
     ];
 
 }

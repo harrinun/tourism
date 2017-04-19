@@ -6,13 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
-class Room extends Model implements Transformable
+class Image extends Model implements Transformable
 {
     use TransformableTrait;
 
     protected $fillable = [
-        'room_type_id',
-        'no_of_rooms',
+        'full_size_path',
+        'card_size_path',
+        'icon_size_path'
     ];
+
+    public function hotels()
+    {
+        return $this->morphedByMany(Hotel::class,'imageable');
+    }
 
 }

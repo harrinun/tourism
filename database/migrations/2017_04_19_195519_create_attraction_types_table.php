@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoomTypesTable extends Migration
+class CreateAttractionTypesTable extends Migration
 {
 
 	/**
@@ -13,10 +13,10 @@ class CreateRoomTypesTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('room_types', function(Blueprint $table) {
+		Schema::create('attraction_types', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique()->index();
-            $table->integer('no_of_persons')->unsigned();
+            $table->string('name')->index()->unique();
+            $table->text('description')->nullable();
             $table->timestamps();
 		});
 	}
@@ -28,7 +28,7 @@ class CreateRoomTypesTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('room_types');
+		Schema::drop('attraction_types');
 	}
 
 }

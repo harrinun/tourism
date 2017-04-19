@@ -33,3 +33,10 @@ Route::resource('hotels','HotelsController');
 |--------------------------------------------------------------------------
 */
 Route::resource('attractions','AttractionsController');
+
+/*
+|--------------------------------------------------------------------------
+| Attraction Types
+|--------------------------------------------------------------------------
+*/
+Route::resource('attraction-types','AttractionTypesController');

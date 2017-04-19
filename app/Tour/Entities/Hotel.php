@@ -31,4 +31,9 @@ class Hotel extends Model implements Transformable
             ]
         ];
     }
+
+    public function images()
+    {
+        return $this->morphToMany(Image::class,'imageable');
+    }
 }
