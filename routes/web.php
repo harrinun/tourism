@@ -40,3 +40,13 @@ Route::resource('attractions','AttractionsController');
 |--------------------------------------------------------------------------
 */
 Route::resource('attraction-types','AttractionTypesController');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('dashboard','HomeController@index');
+});
