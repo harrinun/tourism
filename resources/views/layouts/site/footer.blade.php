@@ -16,9 +16,9 @@
                         <img src="images/logo-footer.png" alt="">
                     </div>
                     <div class="widget_content">
-                        <p>25 California Avenue, Santa Monica, California. USA</p>
-                        <p>+1-888-8765-1234</p>
-                        <a href="#">contact@gofar.com</a>
+                        <p> OS Adams Avenue R/31, Comm 22, Tema. Ghana</p>
+                        <p>+233-244-775-818</p>
+                        <a href="#">contact@gh360.com</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="widget widget_about_us">
                     <h3>About Us</h3>
                     <div class="widget_content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dignissim dolor. Ut risus orci, aliquam sit amet semper eget, egestas aliquam felis.</p>
+                        <p>We build web applications with utmost emphassis on detail</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <!-- WIDGET -->
             <div class="col-md-2">
                 <div class="widget widget_categories">
-                    <h3>Categiries</h3>
+                    <h3>Categories</h3>
                     <ul>
                         <li><a href="#">Countries</a></li>
                         <li><a href="#">Regions</a></li>
@@ -58,14 +58,14 @@
                 <div class="widget widget_recent_entries">
                     <h3>Recent Blog</h3>
                     <ul>
-                        <li><a href="#">Countries</a></li>
-                        <li><a href="#">Regions</a></li>
-                        <li><a href="#">Cities</a></li>
-                        <li><a href="#">Districts</a></li>
-                        <li><a href="#">Countries</a></li>
-                        <li><a href="#">Airports</a></li>
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Places of interest</a></li>
+                        <li><a href="#">Elmina Beach Resort</a></li>
+                        <li><a href="#">Mole Park</a></li>
+                        <li><a href="#">Volta Lake</a></li>
+                        <li><a href="#">Kwame Nkrumah Mausoleum</a></li>
+                        <li><a href="#">Cape Coast Castle</a></li>
+                        <li><a href="#">Larambaga Mosque</a></li>
+                        <li><a href="#">Mountain Afadjato</a></li>
+                        <li><a href="#">Boabeng Monkey Saunctuary</a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <div class="widget widget_follow_us">
                     <div class="widget_content">
                         <p>For Special booking request, please call</p>
-                        <span class="phone">099-099-000</span>
+                        <span class="phone">0244-7758-18</span>
                         <div class="awe-social">
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
@@ -89,7 +89,7 @@
             <!-- END / WIDGET -->
         </div>
         <div class="copyright">
-            <p>©{{date('Y')}} {{config('app.name')}} travel™ All rights reserved.</p>
+            <p>©{{date('Y')}} {{config('app.name')}} gh360™ All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -3,7 +3,7 @@
         <div class="container">
             <!-- LOGO -->
             <div class="logo">
-                <a href="{{url('/')}}"><img src="images/logo.png" alt=""></a>
+                <a href="{{url('/')}}"><img src="images/logo-footer.png" alt=""></a>
             </div>
             <!-- END / LOGO -->
 
