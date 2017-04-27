@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="{{route('attractions.index')}}">My Account</a>
+                        <a href="{{url('/login')}}">My Account</a>
                     </li>
 
                     <li class="">

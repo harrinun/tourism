@@ -4,8 +4,8 @@
     <form class="form-signin" action="index.html">
         <h2 class="form-signin-heading">sign in now</h2>
         <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="User ID" autofocus>
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="text" name="email" class="form-control" placeholder="User ID" autofocus>
+            <input type="password" name="password" class="form-control" placeholder="Password">
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right">
