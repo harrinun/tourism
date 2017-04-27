@@ -20,7 +20,9 @@ class CreateRestaurantsTable extends Migration
 			$table->string('location');
 			$table->string('type_of_food');
 			$table->boolean('delivery');
-			
+            $table->integer('manager')->unsigned();
+            $table->foreign('manager')->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
 		});
 	}

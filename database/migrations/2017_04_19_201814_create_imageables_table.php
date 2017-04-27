@@ -15,10 +15,10 @@ class CreateImageablesTable extends Migration
     {
         Schema::create('imageables', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id');
             $table->integer('image_id')->unsigned();
             $table->integer('imageable_id')->unsigned();
             $table->string('imageable_type');
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -23,6 +23,10 @@
                         <a href="{{route('attractions.index')}}">Attraction</a>
                     </li>
 
+                    <li class="menu-item-has-children">
+                        <a href="{{route('attractions.index')}}">Transport</a>
+                    </li>
+
                     <li class="">
                         <a href="{{url('/')}}">Contact</a>
                     </li>

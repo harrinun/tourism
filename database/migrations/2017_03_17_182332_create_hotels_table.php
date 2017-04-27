@@ -19,8 +19,9 @@ class CreateHotelsTable extends Migration
 			$table->string('region');
 			$table->string('location');
 			$table->string('type');
-			
-
+			$table->integer('manager')->unsigned();
+			$table->foreign('manager')->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
 		});
 	}
