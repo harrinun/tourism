@@ -222,7 +222,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="img/avatar1_small.jpg">
-                    <span class="username">Jhon Doue</span>
+                    <span class="username">{{auth()->user()->name}}</span>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu extended logout">
@@ -230,7 +230,12 @@
                     <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
                     <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                    <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                    <li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();"><i class="icon-key"></i> Log Out</a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
                 </ul>
             </li>
             <!-- user login dropdown end -->
