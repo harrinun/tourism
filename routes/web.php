@@ -49,4 +49,8 @@ Route::resource('attraction-types','AttractionTypesController');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard','HomeController@index');
+
+    Route::resource('hotels','HotelsController',['as'=>'admin']);
+
+    Route::resource('attractions','AttractionsController',['as'=>'admin']);
 });
