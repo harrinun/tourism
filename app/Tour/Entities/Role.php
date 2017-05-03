@@ -11,6 +11,6 @@ class Role extends EntrustRole implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [];
+    protected $fillable = ['name','description','display_name'];
 
 }

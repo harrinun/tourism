@@ -16,9 +16,9 @@
                         <img src="images/logo-footer.png" alt="">
                     </div>
                     <div class="widget_content">
-                        <p> OS Adams Avenue R/31, Comm 22, Tema. Ghana</p>
+                        <p> OS Adams Avenue, Comm 22, Tema. Ghana</p>
                         <p>+233-244-775-818</p>
-                        <a href="#">contact@gh360.com</a>
+                        <a href="#">contact@ghmap.com</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="widget widget_about_us">
                     <h3>About Us</h3>
                     <div class="widget_content">
-                        <p>We build web applications with utmost emphassis on detail</p>
+                        <p>We make travelling and exploring easier</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <li><a href="#">Regions</a></li>
                         <li><a href="#">Cities</a></li>
                         <li><a href="#">Districts</a></li>
-                        <li><a href="#">Countries</a></li>
+                        <li><a href="#">Communities</a></li>
                         <li><a href="#">Airports</a></li>
                         <li><a href="#">Hotels</a></li>
                         <li><a href="#">Places of interest</a></li>
@@ -89,7 +89,7 @@
             <!-- END / WIDGET -->
         </div>
         <div class="copyright">
-            <p>©{{date('Y')}} {{config('app.name')}} gh360™ All rights reserved.</p>
+            <p>©{{date('Y')}}  ghXplorer™ All rights reserved.</p>
         </div>
     </div>
 </footer>
