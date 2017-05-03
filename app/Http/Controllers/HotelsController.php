@@ -34,10 +34,20 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = $this->hotels->paginate(20);
+        $hotels = $this->hotels->all();
 
-
+        if (auth()->check()) {
+            if (auth()->user()->hasRole('admin')) {
+                return view('admin.hotels.index', compact('hotels'));
+            }
+        }
+        elseif (auth()->guest())
         return view('site.hotels.index', compact('hotels'));
+    }
+
+    public function create()
+    {
+        return view('admin.hotels.create');
     }
 
     /**
@@ -51,7 +61,8 @@ class HotelsController extends Controller
     {
 
 
-        $hotel = $this->hotels->create($request->all());
+        //dd($request->all()+['manager'=>auth()->id()]);
+        $hotel = $this->hotels->create($request->all()+['manager'=>auth()->id()]);
 
         $response = [
             'message' => 'Hotel created.',

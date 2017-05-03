@@ -1,5 +1,6 @@
 <?php
 
+use App\Tour\Entities\Role;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -14,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         factory(User::class,1)->create();
+        factory(Role::class,3)->create();
     }
 }

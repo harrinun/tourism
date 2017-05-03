@@ -16,9 +16,12 @@ class CreateHotelsTable extends Migration
 		Schema::create('hotels', function(Blueprint $table) {
             $table->increments('id');
 			$table->string('name');
-			$table->string('region');
-			$table->string('location');
-			$table->string('type');
+			$table->string('slug');
+			$table->string('phone_number');
+			$table->text('address');
+			$table->string('city');
+			$table->string('suburb');
+			$table->integer('parent_id')->unsigned()->nullable();
 			$table->integer('manager')->unsigned();
 			$table->foreign('manager')->references('id')->on('users')
                 ->onDelete('cascade');

@@ -13,11 +13,19 @@ class Hotel extends Model implements Transformable
 
     protected $fillable = [
         'name',
-        'location',
-        'type',
-        'region',
+        'slug',
+        'city',
+        'suburb',
+        'phone_number',
+        'address',
+        'slug',
+        'parent_id',
+        'manager'
     ];
     //todo add rooms relationship
+
+    protected $with = ['user'];
+
     /**
      * Return the sluggable configuration array for this model.
      *
@@ -35,5 +43,19 @@ class Hotel extends Model implements Transformable
     public function images()
     {
         return $this->morphToMany(Image::class,'imageable');
+    }
+
+    /**
+     * A hotel belongs to can Many categories
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class,'category_hotel');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class,'manager');
     }
 }

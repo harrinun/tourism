@@ -38,7 +38,7 @@
             <!-- WIDGET -->
             <div class="col-md-2">
                 <div class="widget widget_categories">
-                    <h3>Categories</h3>
+                    <h3>Category</h3>
                     <ul>
                         <li><a href="#">Countries</a></li>
                         <li><a href="#">Regions</a></li>
@@ -89,7 +89,7 @@
             <!-- END / WIDGET -->
         </div>
         <div class="copyright">
-            <p>©{{date('Y')}}  ghXplorer™ All rights reserved.</p>
+            <p>©{{date('Y')}}  {{config('app.name')}} All rights reserved.</p>
         </div>
     </div>
 </footer>
