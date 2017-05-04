@@ -136,7 +136,7 @@ class HotelsController extends Controller
         ];
 
 
-        return redirect()->back()->with('message', $response['message']);
+        return redirect(route('admin.hotels.index'))->with('message', $response['message']);
     }
 
 
