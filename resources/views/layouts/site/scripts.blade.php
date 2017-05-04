@@ -76,7 +76,6 @@
             forceFullWidth:"off",
 
 
-
             hideThumbsOnMobile:"off",
             hideNavDelayOnMobile:1500,
             hideBulletsOnMobile:"off",

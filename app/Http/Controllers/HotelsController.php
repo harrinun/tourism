@@ -107,7 +107,7 @@ class HotelsController extends Controller
     public function edit($hotel)
     {
 
-        return view('site.hotels.edit', compact('hotel'));
+        return view('admin.hotels.edit', compact('hotel'));
     }
 
     public function upload($hotel)
@@ -124,11 +124,11 @@ class HotelsController extends Controller
      *
      * @return Response
      */
-    public function update(HotelUpdateRequest $request, $id)
+    public function update(HotelUpdateRequest $request, $hotel)
     {
 
 
-        $hotel = $this->hotels->update($request->all(), $id);
+        $hotel = $this->hotels->update($request->all(), $hotel->id);
 
         $response = [
             'message' => 'Hotel updated.',

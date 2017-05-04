@@ -44,7 +44,7 @@
                                 <td>{{$hotel->name}}</td>
                                 <td>{{$hotel->city}}</td>
                                 <td>{{$hotel->user->name}}</td>
-                                <td><a class="edit" href="javascript:;">Edit</a></td>
+                                <td><a class="edit" href="{{route('admin.hotels.edit',$hotel->slug)}}">Edit</a></td>
                                 <td><a class="delete" href="javascript:;">Delete</a></td>
                             </tr>
                         @endforeach

@@ -17,7 +17,7 @@ class PageServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('welcome',DestinationPageComposer::class);
-        view()->composer('admin.hotels.create',function ($view){
+        view()->composer(['admin.hotels.create','admin.hotels.edit'],function ($view){
             $select = [
                 'hotel_list' =>Hotel::pluck('name','id'),
                 'category_list' => Category::pluck('name','id')
