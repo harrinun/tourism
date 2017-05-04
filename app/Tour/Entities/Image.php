@@ -13,7 +13,8 @@ class Image extends Model implements Transformable
     protected $fillable = [
         'full_size_path',
         'card_size_path',
-        'icon_size_path'
+        'icon_size_path',
+        'owner_id'
     ];
 
     public function hotels()

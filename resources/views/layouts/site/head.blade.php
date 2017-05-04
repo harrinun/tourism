@@ -13,22 +13,22 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
     <!-- CSS LIBRARY -->
-    <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/awe-booking-font.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/awe-booking-font.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/magnific-popup.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/lib/jquery-ui.css')}}">
     <!-- REVOLUTION DEMO -->
-    <link rel="stylesheet" type="text/css" href="revslider-demo/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('revslider-demo/css/settings.css')}}">
 
 
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/demo.css')}}">
 
     <!-- CSS COLOR -->
-    <link id="colorreplace" rel="stylesheet" type="text/css" href="css/colors/blue.css">
+    <link id="colorreplace" rel="stylesheet" type="text/css" href="{{asset('css/colors/blue.css')}}'">
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

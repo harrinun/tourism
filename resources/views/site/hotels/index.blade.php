@@ -27,13 +27,15 @@
                                     <div class="hotel-item">
                                 <div class="item-media">
                                     <div class="image-cover">
-                                        <img src="images/hotel/1.jpg" alt="">
+                                        @foreach($hotel->images->take(1) as $image)
+                                        <img src="{{asset($image->card_size_path)}}" alt="">
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="item-body">
                                     <div class="item-title">
                                         <h2>
-                                            <a href="#">Hotel California</a>
+                                            <a href="{{route('hotels.show',$hotel->slug)}}">{{$hotel->name}}</a>
                                         </h2>
                                     </div>
                                     <div class="item-hotel-star">
@@ -45,7 +47,7 @@
                                     </div>
                                     <div class="item-address">
                                         <i class="awe-icon awe-icon-marker-2"></i>
-                                        9579 Wishing Mount, Wynot, ND,  US
+                                        {{$hotel->city}}
                                     </div>
                                     <div class="item-footer">
                                         <div class="item-rate">

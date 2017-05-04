@@ -40,7 +40,6 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $images = $this->repository->all();
 
         if (request()->wantsJson()) {
@@ -67,7 +66,7 @@ class ImagesController extends Controller
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
-            $image = $this->repository->create($request->all());
+            $image = $this->repository->upload($request->all());
 
             $response = [
                 'message' => 'Image created.',

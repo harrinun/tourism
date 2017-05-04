@@ -21,6 +21,7 @@
     <link href={{asset("css/style-admin.css")}} rel="stylesheet">
     <link href={{asset("css/style-responsive.css")}} rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fileinput.min.css')}}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -66,6 +67,7 @@
 <script src={{asset("js/respond.min.js")}} ></script>
 <script src="{{asset('js/toastr.min.js')}}"></script>
 <script src="{{asset('js/editable-table.js')}}"></script>
+<script src="{{asset('js/fileinput.min.js')}}"></script>
 
 <script class="include" type="text/javascript" src={{asset("js/jquery.dcjqaccordion.2.7.js")}}></script>
 
@@ -77,6 +79,8 @@
 <script src={{asset("js/easy-pie-chart.js")}}></script>
 <script src={{asset("js/count.js")}}></script>
 @stack('js')
+
+@yield('jscript')
 
 @if (session('message'))
     <script>

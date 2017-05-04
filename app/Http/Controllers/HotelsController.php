@@ -34,14 +34,14 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = $this->hotels->all();
+        $hotels = $this->hotels->paginate();
 
         if (auth()->check()) {
             if (auth()->user()->hasRole('admin')) {
                 return view('admin.hotels.index', compact('hotels'));
             }
         }
-        elseif (auth()->guest())
+        elseif (auth()->guest() or !auth()->user()->hasRole('admin'))
         return view('site.hotels.index', compact('hotels'));
     }
 
@@ -70,7 +70,7 @@ class HotelsController extends Controller
         ];
 
 
-        return redirect()->back()->with('message', $response['message']);
+        return redirect(route('hotels.upload',$hotel->slug))->with('message', $response['message']);
 
     }
 
@@ -82,10 +82,16 @@ class HotelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($hotel)
     {
-        $hotel = $this->hotels->find($id);
+        if (auth()->check()) {
+            if (auth()->user()->hasRole('admin')) {
+                return view('site.hotels.show', compact('hotel'));
+            }
+        }
+        elseif (auth()->guest() or !auth()->user()->hasRole('admin'))
 
+            return view('site.hotels.show', compact('hotel'));
 
         return view('site.hotels.show', compact('hotel'));
     }
@@ -98,12 +104,15 @@ class HotelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($hotel)
     {
 
-        $hotel = $this->hotels->find($id);
-
         return view('site.hotels.edit', compact('hotel'));
+    }
+
+    public function upload($hotel)
+    {
+        return view('admin.hotels._upload',compact('hotel'));
     }
 
 

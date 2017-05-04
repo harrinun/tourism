@@ -41,6 +41,9 @@ Route::resource('attractions','AttractionsController');
 */
 Route::resource('attraction-types','AttractionTypesController');
 
+Route::post('images/upload',['as'=>'images.upload','uses'=>'ImagesController@store']);
+Route::resource('images','ImagesController');
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -50,6 +53,7 @@ Route::resource('attraction-types','AttractionTypesController');
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard','HomeController@index');
 
+    Route::get('hotels/{hotel}/upload',['as'=>'hotels.upload','uses'=>'HotelsController@upload']);
     Route::resource('hotels','HotelsController',['as'=>'admin']);
 
     Route::resource('attractions','AttractionsController',['as'=>'admin']);

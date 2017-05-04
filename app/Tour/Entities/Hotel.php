@@ -26,6 +26,10 @@ class Hotel extends Model implements Transformable
 
     protected $with = ['user'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     /**
      * Return the sluggable configuration array for this model.
      *
@@ -42,7 +46,7 @@ class Hotel extends Model implements Transformable
 
     public function images()
     {
-        return $this->morphToMany(Image::class,'imageable');
+        return $this->hasMany(Image::class,'owner_id');
     }
 
     /**

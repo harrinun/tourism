@@ -52,7 +52,7 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
      */
     public function storageDisk()
     {
-        $s3 = Storage::disk('local');
+        $s3 = Storage::disk('public');
         return $s3;
     }
 
@@ -64,16 +64,19 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
     public function upload($formdata)
     {
         //dd($formdata);
-        $file = $formdata;
+        $file = $formdata['file'];
         $imageExt = $file->getClientOriginalExtension();
         $nameWithExt = uniqid() .time(). '.' . $imageExt;
         $iconSize = $this->iconSize($file, $nameWithExt);
         $cardSize = $this->cardSize($file, $nameWithExt);
+        $fullSize = $this->fullSize($file, $nameWithExt);
 
         //todo  add Delete Method
         $artwork = Image::create([
             'icon_size_path' =>$iconSize,
-            'card_size_path' =>$cardSize
+            'card_size_path' =>$cardSize,
+            'full_size_path' =>$fullSize,
+            'owner_id' => $formdata['hotel_id']
         ]);
         return $artwork;
     }
@@ -91,8 +94,8 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
         $manager = new ImageManager();
         $image = $manager->make($file)->resize(300, 200);
         $icon = $image->stream();
-        $this->storageDisk()->put(config('tourism.iconSize') . $nameWithExt, $icon->__toString(),'public');
-        $path = env('CLOUDFRONT_URL').config('tourism.iconSize') . $nameWithExt;
+        $stored = $this->storageDisk()->put(config('tourism.iconSize') . $nameWithExt, $icon->__toString(),'public');
+        $path =config('tourism.iconSize').$nameWithExt;
         return $path;
 
     }
@@ -106,10 +109,10 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
     public function cardSize($file, $nameWithExt)
     {
         $manager = new ImageManager();
-        $image = $manager->make($file)->resize(640, 640);
+        $image = $manager->make($file)->resize(640, 540);
         $card = $image->stream();
-        $this->storageDisk()->put(config('tourism.cardSize') . $nameWithExt, $card->__toString(),'public');
-        $path = env('CLOUDFRONT_URL').config('tourism.cardSize') . $nameWithExt;
+       $stored = $this->storageDisk()->put(config('tourism.cardSize') . $nameWithExt, $card->__toString(),'public');
+        $path = config('tourism.cardSize').$nameWithExt;
         return $path;
 
     }
@@ -123,10 +126,10 @@ class ImageRepositoryEloquent extends BaseRepository implements ImageRepository
     public function fullSize($file, $nameWithExt)
     {
         $manager = new ImageManager();
-        $image = $manager->make($file)->resize(640, 640);
+        $image = $manager->make($file)->resize(1000, 800);
         $card = $image->stream();
-        $this->storageDisk()->put(config('tourism.fullSize') . $nameWithExt, $card->__toString(),'public');
-        $path = env('CLOUDFRONT_URL').config('tourism.fullSize') . $nameWithExt;
+        $stored =$this->storageDisk()->put(config('tourism.fullSize') . $nameWithExt, $card->__toString(),'public');
+        $path = config('tourism.fullSize').$nameWithExt;
         return $path;
 
     }
