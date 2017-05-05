@@ -62,4 +62,9 @@ class Hotel extends Model implements Transformable
     {
         return $this->belongsTo(\App\User::class,'manager');
     }
+
+    public function addons()
+    {
+       return $this->morphMany(EntityAddon::class,'addonable');
+    }
 }

@@ -34,6 +34,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Tour\Repositories\RoleRepository::class, \App\Tour\Eloquent\RoleRepositoryEloquent::class);
         $this->app->bind(\App\Tour\Repositories\UserRepository::class, \App\Tour\Eloquent\UserRepositoryEloquent::class);
         $this->app->bind(\App\Tour\Repositories\HotelTypeRepository::class, \App\Tour\Eloquent\HotelTypeRepositoryEloquent::class);
+        $this->app->bind(\App\Tour\Repositories\ExtraRepository::class, \App\Tour\Eloquent\ExtraRepositoryEloquent::class);
+        $this->app->bind(\App\Tour\Repositories\EntityAddonRepository::class, \App\Tour\Eloquent\EntityAddonRepositoryEloquent::class);
         //:end-bindings:
     }
 }

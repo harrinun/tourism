@@ -30,3 +30,12 @@ $factory->define(App\Tour\Entities\Role::class, function (Faker\Generator $faker
         'name' => $faker->unique()->randomElement(['admin','manager','user']),
     ];
 });
+
+
+$factory->define(App\Tour\Entities\Extra::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'name' => $faker->unique()->randomElement(['WIFI','Gym','Transport','Breakfast']),
+    ];
+});
