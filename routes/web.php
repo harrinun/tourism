@@ -50,7 +50,7 @@ Route::resource('images','ImagesController');
 |--------------------------------------------------------------------------
 */
 
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('dashboard','HomeController@index');
 
     Route::get('hotels/{hotel}/upload',['as'=>'hotels.upload','uses'=>'HotelsController@upload']);

@@ -13,11 +13,17 @@ class Attraction extends Model implements Transformable
 
     protected $fillable = [
         'name',
-        'type',
+        'attraction_type_id',
         'description',
         'region',
         'location',
+        'manager'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * Return the sluggable configuration array for this model.
@@ -31,5 +37,11 @@ class Attraction extends Model implements Transformable
                 'source'=>'name'
             ]
         ];
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(\App\User::class,'manager');
+
     }
 }

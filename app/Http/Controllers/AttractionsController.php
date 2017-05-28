@@ -34,11 +34,22 @@ class AttractionsController extends Controller
      */
     public function index()
     {
-
-        $attractions = $this->attractions->paginate(20);
+        $attractions = $this->attractions->all();
+        if (auth()->check()) {
+            if (auth()->user()->hasRole('admin')) {
+                return view('admin.attractions.index', compact('attractions'));
+            }
+        }
+        elseif (auth()->guest() or !auth()->user()->hasRole('admin'))
 
 
         return view('site.attractions.index', compact('attractions'));
+    }
+
+
+    public function create()
+    {
+        return view('admin.attractions.create');
     }
 
     /**
@@ -52,7 +63,7 @@ class AttractionsController extends Controller
     {
 
 
-        $attraction = $this->attractions->create($request->all());
+        $attraction = $this->attractions->create($request->all()+['manager'=>auth()->id()]);
 
         $response = [
             'message' => 'Attraction created.',
@@ -78,6 +89,12 @@ class AttractionsController extends Controller
         $attraction = $this->attractions->find($id);
 
         return view('site.attractions.show', compact('attraction'));
+    }
+
+
+    public function upload($attraction)
+    {
+        return view('admin.attractions._upload',compact('attraction'));
     }
 
 

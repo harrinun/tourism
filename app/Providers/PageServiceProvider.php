@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Tour\Composers\DestinationPageComposer;
+use App\Tour\Entities\AttractionType;
 use App\Tour\Entities\Category;
 use App\Tour\Entities\Hotel;
 use Illuminate\Support\ServiceProvider;
@@ -17,10 +18,11 @@ class PageServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('welcome',DestinationPageComposer::class);
-        view()->composer(['admin.hotels.create','admin.hotels.edit'],function ($view){
+        view()->composer(['admin.hotels.create','admin.hotels.edit','admin.attractions.create'],function ($view){
             $select = [
                 'hotel_list' =>Hotel::pluck('name','id'),
-                'category_list' => Category::pluck('name','id')
+                'category_list' => Category::pluck('name','id'),
+                'attractionType' => AttractionType::pluck('name','id'),
             ];
            $view->with('select',$select);
         });

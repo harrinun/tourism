@@ -16,6 +16,7 @@ class CreateAttractionsTable extends Migration
 		Schema::create('attractions', function(Blueprint $table) {
             $table->increments('id');
 			$table->string('name');
+			$table->string('slug');
 			$table->string('region');
 			$table->string('location');
 			$table->integer('attraction_type_id')->unsigned();
