@@ -17,6 +17,7 @@
                 <ul class="sub">
                     <li><a  href="{{route('admin.attractions.create')}}">Add New</a></li>
                     <li><a  href="{{route('admin.attractions.index')}}">List All</a></li>
+                    <li><a  href="{{route('admin.attraction-types.index')}}">Attraction Types</a></li>
                 </ul>
             </li>
 

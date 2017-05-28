@@ -57,4 +57,6 @@ Route::group(['prefix'=>'admin'],function(){
     Route::resource('hotels','HotelsController',['as'=>'admin']);
 
     Route::resource('attractions','AttractionsController',['as'=>'admin']);
+
+    Route::resource('attraction-types','AttractionTypesController',['as'=>'admin']);
 });

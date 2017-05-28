@@ -42,14 +42,14 @@ class AttractionTypesController extends Controller
     {
         $attractionTypes = $this->repository->all();
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $attractionTypes,
-            ]);
+        if (auth()->check()) {
+            if (auth()->user()->hasRole('admin')) {
+                return view('admin.attraction-types.index', compact('attractionTypes'));
+            }
         }
+        elseif (auth()->guest() or !auth()->user()->hasRole('admin'))
 
-        return view('attractionTypes.index', compact('attractionTypes'));
+        return view('admin.attraction-types.index', compact('attractionTypes'));
     }
 
     /**
