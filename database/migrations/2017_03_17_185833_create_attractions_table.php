@@ -20,7 +20,6 @@ class CreateAttractionsTable extends Migration
 			$table->string('region');
 			$table->string('location');
 			$table->integer('attraction_type_id')->unsigned();
-			$table->string('type');
             $table->integer('manager')->unsigned();
             $table->foreign('manager')->references('id')->on('users')
                 ->onDelete('cascade');
