@@ -6,6 +6,7 @@ use App\Tour\Composers\DestinationPageComposer;
 use App\Tour\Entities\AttractionType;
 use App\Tour\Entities\Category;
 use App\Tour\Entities\Hotel;
+use App\Tour\Entities\Image;
 use App\Tour\Entities\RoomType;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,6 +35,13 @@ class PageServiceProvider extends ServiceProvider
                 'room_type' => RoomType::pluck('name','id'),
             ];
             $view->with('select',$select);
+        });
+        view()->composer('site.destination.index',function ($view){
+           $data = [
+               'destinations' => Hotel::all(),
+                'images' => Image::all()
+            ];
+            $view->with('data',$data);
         });
     }
 

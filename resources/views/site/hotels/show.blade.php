@@ -195,21 +195,16 @@
                                     <tr>
                                         <th class="room-type">Room type</th>
                                         <th class="room-people">Max</th>
-                                        <th class="room-condition">Condition</th>
                                         <th class="room-price">Today price</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($hotel->rooms as $room)
                                     <tr>
                                         <td class="room-type">
-                                            <div class="room-thumb">
-                                                <img src="images/thumb/1.jpg" alt="">
-                                            </div>
+
                                             <div class="room-title">
-                                                <h4>Standard Double Room</h4>
-                                            </div>
-                                            <div class="room-descriptions">
-                                                <p>Prices are per room<br>Included: 5 % service charge, 10 % VAT</p>
+                                                <h4>{{$room->roomType->name}}</h4>
                                             </div>
                                             <div class="room-type-footer">
                                                 <i class="awe-icon awe-icon-gym"></i>
@@ -220,164 +215,18 @@
                                             </div>
                                         </td>
                                         <td class="room-people">
-                                            <i class="awe-icon awe-icon-users"></i>
-                                        </td>
-                                        <td class="room-condition">
-                                            <ul class="list-condition">
-                                                <li>Non-refundable</li>
-                                                <li>Breakfast $ 190 per guest</li>
-                                            </ul>
+                                            {{$room->roomType->no_of_persons}}
                                         </td>
                                         <td class="room-price">
                                             <div class="price">
-                                                <span class="amount">$59</span>
-                                                <em>2 room available</em>
-                                                <a href="room-type-popup.html" class="full-price-open-popup">Full price</a>
+                                                <span class="amount">GHS {{$room->price_per_night}}</span>
+                                                <em>{{$room->no_of_rooms}} room available</em>
+                                                <a href="#" class="full-price-open-popup">Full price</a>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="room-type">
-                                            <div class="room-thumb">
-                                                <img src="images/thumb/2.jpg" alt="">
-                                            </div>
-                                            <div class="room-title">
-                                                <h4>Standard Double Room</h4>
-                                            </div>
-                                            <div class="room-descriptions">
-                                                <p>Prices are per room<br>Included: 5 % service charge, 10 % VAT</p>
-                                            </div>
-                                            <div class="room-type-footer">
-                                                <i class="awe-icon awe-icon-gym"></i>
-                                                <i class="awe-icon awe-icon-car"></i>
-                                                <i class="awe-icon awe-icon-food"></i>
-                                                <i class="awe-icon awe-icon-level"></i>
-                                                <i class="awe-icon awe-icon-wifi"></i>
-                                            </div>
-                                        </td>
-                                        <td class="room-people">
-                                            <i class="awe-icon awe-icon-user"></i>
-                                        </td>
-                                        <td class="room-condition">
-                                            <ul class="list-condition">
-                                                <li>Non-refundable</li>
-                                                <li>Breakfast $ 190 per guest</li>
-                                            </ul>
-                                        </td>
-                                        <td class="room-price">
-                                            <div class="price">
-                                                <span class="amount">$59</span>
-                                                <em>2 room available</em>
-                                                <a href="room-type-popup.html" class="full-price-open-popup">Full price</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="room-type">
-                                            <div class="room-thumb">
-                                                <img src="images/thumb/3.jpg" alt="">
-                                            </div>
-                                            <div class="room-title">
-                                                <h4>Victoria Suite</h4>
-                                            </div>
-                                            <div class="room-descriptions">
-                                                <p>Prices are per room<br>Included: 5 % service charge, 10 % VAT</p>
-                                            </div>
-                                            <div class="room-type-footer">
-                                                <i class="awe-icon awe-icon-gym"></i>
-                                                <i class="awe-icon awe-icon-car"></i>
-                                                <i class="awe-icon awe-icon-food"></i>
-                                                <i class="awe-icon awe-icon-level"></i>
-                                                <i class="awe-icon awe-icon-wifi"></i>
-                                            </div>
-                                        </td>
-                                        <td class="room-people">
-                                            <i class="awe-icon awe-icon-users"></i>
-                                        </td>
-                                        <td class="room-condition">
-                                            <ul class="list-condition">
-                                                <li>Non-refundable</li>
-                                                <li>Breakfast $ 190 per guest</li>
-                                            </ul>
-                                        </td>
-                                        <td class="room-price">
-                                            <div class="price">
-                                                <span class="amount">$59</span>
-                                                <em>2 room available</em>
-                                                <a href="room-type-popup.html" class="full-price-open-popup">Full price</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="room-type">
-                                            <div class="room-thumb">
-                                                <img src="images/thumb/4.jpg" alt="">
-                                            </div>
-                                            <div class="room-title">
-                                                <h4>Standard Double Room</h4>
-                                            </div>
-                                            <div class="room-descriptions">
-                                                <p>Prices are per room<br>Included: 5 % service charge, 10 % VAT</p>
-                                            </div>
-                                            <div class="room-type-footer">
-                                                <i class="awe-icon awe-icon-gym"></i>
-                                                <i class="awe-icon awe-icon-car"></i>
-                                                <i class="awe-icon awe-icon-food"></i>
-                                                <i class="awe-icon awe-icon-level"></i>
-                                                <i class="awe-icon awe-icon-wifi"></i>
-                                            </div>
-                                        </td>
-                                        <td class="room-people">
-                                            <i class="awe-icon awe-icon-user"></i>
-                                        </td>
-                                        <td class="room-condition">
-                                            <ul class="list-condition">
-                                                <li>Non-refundable</li>
-                                                <li>Breakfast $ 190 per guest</li>
-                                            </ul>
-                                        </td>
-                                        <td class="room-price">
-                                            <div class="price">
-                                                <span class="amount">$59</span>
-                                                <em>unavailable</em>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="room-type">
-                                            <div class="room-thumb">
-                                                <img src="images/thumb/4.jpg" alt="">
-                                            </div>
-                                            <div class="room-title">
-                                                <h4>Standard Double Room</h4>
-                                            </div>
-                                            <div class="room-descriptions">
-                                                <p>Prices are per room<br>Included: 5 % service charge, 10 % VAT</p>
-                                            </div>
-                                            <div class="room-type-footer">
-                                                <i class="awe-icon awe-icon-gym"></i>
-                                                <i class="awe-icon awe-icon-car"></i>
-                                                <i class="awe-icon awe-icon-food"></i>
-                                                <i class="awe-icon awe-icon-level"></i>
-                                                <i class="awe-icon awe-icon-wifi"></i>
-                                            </div>
-                                        </td>
-                                        <td class="room-people">
-                                            <i class="awe-icon awe-icon-user"></i>
-                                        </td>
-                                        <td class="room-condition">
-                                            <ul class="list-condition">
-                                                <li>Non-refundable</li>
-                                                <li>Breakfast $ 190 per guest</li>
-                                            </ul>
-                                        </td>
-                                        <td class="room-price">
-                                            <div class="price">
-                                                <span class="amount">$59</span>
-                                                <em>unavailable</em>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
+
                                     </tbody>
                                 </table>
                             </div>

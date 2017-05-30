@@ -14,6 +14,9 @@ use App\Validators\HotelValidator;
  */
 class HotelRepositoryEloquent extends BaseRepository implements HotelRepository
 {
+    protected $fieldSearchable = [
+      'city'
+    ];
     /**
      * Specify Model class name
      *

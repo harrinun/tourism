@@ -14,7 +14,7 @@
                         <a href="{{url('/')}}">Home</a>
                     </li>
                     <li class="">
-                        <a href="destinations-list.html">Destinations</a>
+                        <a href="{{url('/destinations')}}">Destinations</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="{{route('hotels.index')}}">Hotels</a>

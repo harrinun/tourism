@@ -44,6 +44,7 @@ Route::resource('attraction-types','AttractionTypesController');
 Route::post('images/upload',['as'=>'images.upload','uses'=>'ImagesController@store']);
 Route::resource('images','ImagesController');
 
+Route::get('destinations','HomeController@destinations');
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
