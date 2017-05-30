@@ -6,6 +6,7 @@ use App\Tour\Composers\DestinationPageComposer;
 use App\Tour\Entities\AttractionType;
 use App\Tour\Entities\Category;
 use App\Tour\Entities\Hotel;
+use App\Tour\Entities\RoomType;
 use Illuminate\Support\ServiceProvider;
 
 class PageServiceProvider extends ServiceProvider
@@ -25,6 +26,14 @@ class PageServiceProvider extends ServiceProvider
                 'attractionType' => AttractionType::pluck('name','id'),
             ];
            $view->with('select',$select);
+        });
+
+        view()->composer(['admin.room._form_room'],function ($view){
+            $select = [
+                'hotels' =>Hotel::where('manager',auth()->id())->pluck('name','id'),
+                'room_type' => RoomType::pluck('name','id'),
+            ];
+            $view->with('select',$select);
         });
     }
 

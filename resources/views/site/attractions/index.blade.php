@@ -34,12 +34,12 @@
                                             <div class="item-body">
                                                 <div class="item-title">
                                                     <h2>
-                                                        <a href="#">American Museum of Natural History</a>
+                                                        <a href="#">{{$attraction->name}}</a>
                                                     </h2>
                                                 </div>
                                                 <div class="item-address">
                                                     <i class="awe-icon awe-icon-marker-2"></i>
-                                                    9579 Wishing Mount, Wynot, ND,  US
+                                                    {{$attraction->location}}, {{$attraction->region}}
                                                 </div>
                                                 <div class="item-footer">
                                                     <div class="item-rate">
@@ -48,16 +48,6 @@
                                                 </div>
                                             </div>
                                             <div class="item-price-more">
-                                                <div class="price">
-                                                    Adult ticket
-                                                    <ins>
-                                                        <span class="amount">$200</span>
-                                                    </ins>
-                                                    <del>
-                                                        <span class="amount">$200</span>
-                                                    </del>
-
-                                                </div>
                                                 <a href="#" class="awe-btn">Book now</a>
                                             </div>
 

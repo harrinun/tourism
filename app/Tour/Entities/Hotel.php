@@ -66,5 +66,11 @@ class Hotel extends Model implements Transformable
     public function addons()
     {
        return $this->morphMany(EntityAddon::class,'addonable');
+        
+    }
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
     }
 }

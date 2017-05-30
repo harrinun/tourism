@@ -59,4 +59,6 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::resource('attractions','AttractionsController',['as'=>'admin']);
 
     Route::resource('attraction-types','AttractionTypesController',['as'=>'admin']);
+    Route::resource('room-types','RoomTypesController',['as'=>'admin']);
+    Route::resource('rooms','RoomsController',['as'=>'admin']);
 });

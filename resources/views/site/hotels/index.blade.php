@@ -65,7 +65,7 @@
                                 <div class="item-price-more">
                                     <div class="price">
                                         one night from
-                                        <span class="amount">$200</span>
+                                        <span class="amount">GHS {{$hotel->rooms->min('price_per_night')}}</span>
                                     </div>
                                     <a href="#" class="awe-btn">Book now</a>
                                 </div>

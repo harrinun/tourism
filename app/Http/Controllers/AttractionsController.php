@@ -34,7 +34,7 @@ class AttractionsController extends Controller
      */
     public function index()
     {
-        $attractions = $this->attractions->all();
+        $attractions = $this->attractions->paginate();
         if (auth()->check()) {
             if (auth()->user()->hasRole('admin')) {
                 return view('admin.attractions.index', compact('attractions'));
