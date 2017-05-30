@@ -4,15 +4,15 @@
     <!-- page start-->
     <section class="panel">
         <header class="panel-heading">
-            Editable Table
+            Hotels
         </header>
         <div class="panel-body">
             <div class="adv-table editable-table ">
                 <div class="clearfix">
                     <div class="btn-group">
-                        <button id="editable-sample_new" class="btn green">
+                        <a href="{{route('admin.hotels.create')}}" id="editable-sample_new" class="btn btn-primary">
                             Add New <i class="icon-plus"></i>
-                        </button>
+                        </a>
                     </div>
                     <div class="btn-group pull-right">
                         <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
@@ -45,7 +45,11 @@
                                 <td>{{$hotel->city}}</td>
                                 <td>{{$hotel->user->name}}</td>
                                 <td><a class="edit" href="{{route('admin.hotels.edit',$hotel->slug)}}">Edit</a></td>
-                                <td><a class="delete" href="javascript:;">Delete</a></td>
+                                <td><a class="delete" href="#" onclick="event.preventDefault();
+                                       document.getElementById('del-form').submit()">Delete
+                                    {!! Form::open(['method'=>'delete','id'=>'del-form','hidden','route'=>['hotels.destroy',$hotel->slug]]) !!}
+                                    {!! Form::close() !!}</a>
+                                </td>
                             </tr>
                         @endforeach
                     @endif

@@ -136,7 +136,7 @@ class HotelsController extends Controller
         ];
 
 
-        return redirect(route('admin.hotels.index'))->with('message', $response['message']);
+        return redirect(route('hotels.upload',$hotel->slug))->with('message', $response['message']);
     }
 
 
@@ -147,9 +147,11 @@ class HotelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($hotel)
     {
-        $this->hotels->delete($id);
+        dd($hotel);
+
+        $this->hotels->delete($hotel->id);
 
 
         return redirect()->back()->with('message', 'Hotel deleted.');

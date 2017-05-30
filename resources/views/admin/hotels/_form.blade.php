@@ -10,17 +10,17 @@
 <div class="form-group">
     {!! Form::label('parent_id', 'Parent Hotel',['class'=>'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('parent_id',['1'=>'Main'],null, ['class' => 'form-control select','placeholder'=>'Parent Hotel']) !!}
+        {!! Form::select('parent_id',$select['hotel_list'],null, ['class' => 'form-control select','data-placeholder'=>'Parent Hotel']) !!}
     </div>
 </div>
 
 <!--Category-->
-<div class="form-group">
+{{--<div class="form-group">
     {!! Form::label('categories[]', 'Category',['class'=>'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::select('categories[]',$select['category_list'],null, ['class' => 'form-control ','multiple','placeholder'=>'Category']) !!}
     </div>
-</div>
+</div>--}}
 
 <div class="form-group">
     {!! Form::label('phone_number', 'Phone Number',['class'=>'col-md-4 control-label']) !!}

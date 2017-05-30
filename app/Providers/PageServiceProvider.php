@@ -22,7 +22,7 @@ class PageServiceProvider extends ServiceProvider
         view()->composer('welcome',DestinationPageComposer::class);
         view()->composer(['admin.hotels.create','admin.hotels.edit','admin.attractions.create'],function ($view){
             $select = [
-                'hotel_list' =>Hotel::pluck('name','id'),
+                'hotel_list' =>Hotel::where('manager',auth()->id())->pluck('name','id'),
                 'category_list' => Category::pluck('name','id'),
                 'attractionType' => AttractionType::pluck('name','id'),
             ];
